@@ -1,0 +1,34 @@
+// generate nest applications
+npx @nestjs/cli@latest new backend
+
+// install nest cli
+npm install -g @nestjs/cli
+
+// generate products
+nest g res products
+
+// install prisma
+npm install prisma -D
+
+// initialize prisma
+npx prisma init --datasource-provider sqlite
+
+// run migration prisma
+npx prisma migrate dev --name init
+
+// for show database
+npx prisma studio
+
+// service database
+nest g service prisma --no-spec
+
+// update migration
+npx prisma migrate dev --name product_name
+
+// implement swagger
+npm install --save @nestjs/swagger
+
+// generate next applications
+npx create-next-app frontend
+
+// 08/29/2024
