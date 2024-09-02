@@ -28,7 +28,7 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        {children}
+        <main className="container mx-auto pt-4">{children}</main>
       </body>
     </html>
   );

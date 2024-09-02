@@ -31,4 +31,14 @@ npm install --save @nestjs/swagger
 // generate next applications
 npx create-next-app frontend
 
+// add shadcn ui
+npx shadcn@latest init
+
+// add elements ui
+npx shadcn@latest add button input card label
+
+// install react hook form
+npm install react-hook-form
+
+
 // 08/29/2024
