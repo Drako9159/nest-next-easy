@@ -13,16 +13,15 @@ import { deleteProduct } from "./products.api";
 import { useRouter } from "next/navigation";
 
 export default function ProductCard({ product }: any) {
+  const router = useRouter();
 
-    const router = useRouter();
-
-    async function handleRemoveProduct(id: string) {
-        await deleteProduct(id);
-        router.refresh();
-    }
+  async function handleRemoveProduct(id: string) {
+    await deleteProduct(id);
+    router.refresh();
+  }
 
   return (
-    <Card>
+    <Card onClick={() => router.push(`/products/${product.id}`)}>
       <CardHeader>
         <CardTitle className="flex justify-between">
           {product.name}
@@ -40,7 +39,11 @@ export default function ProductCard({ product }: any) {
       </CardContent>
       <CardFooter className="flex justify-between">
         <Button className="mt-4">Buy</Button>
-        <Button onClick={() => handleRemoveProduct(product.id)} className="mt-4" variant="destructive">
+        <Button
+          onClick={() => handleRemoveProduct(product.id)}
+          className="mt-4"
+          variant="destructive"
+        >
           Delete
         </Button>
       </CardFooter>
