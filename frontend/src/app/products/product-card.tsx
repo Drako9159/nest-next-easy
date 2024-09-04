@@ -38,7 +38,11 @@ export default function ProductCard({ product }: any) {
         </p>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button className="mt-4">Buy</Button>
+        <Button className="mt-4" onClick={(e) => {
+          e.stopPropagation();
+          router.push(`/products/${product.id}/edit`)
+        }}
+        >Edit</Button>
         <Button
           onClick={() => handleRemoveProduct(product.id)}
           className="mt-4"
