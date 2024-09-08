@@ -33,6 +33,7 @@ export class ProductsService {
   }
 
   async findOne(id: number) {
+    if (!id) throw new NotFoundException(`Product with id ${id} not found`);
     const productFound = await this.prismaService.product.findUnique({
       where: { id },
     });
