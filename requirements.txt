@@ -40,5 +40,4 @@ npx shadcn@latest add button input card label
 // install react hook form
 npm install react-hook-form
 
-
 // 08/29/2024
